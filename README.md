@@ -33,12 +33,12 @@ Docker (recommended for Synology)
 
 - Build and run locally:
 
-  docker build -t ue-telemetry:latest .
+  docker build -t ue-telemetry:latest -f docker/Dockerfile .
   docker run -d -p 8000:8000 -v $(pwd)/data:/app/data --name telemetry ue-telemetry:latest
 
 - Or use docker-compose:
 
-  docker-compose up -d --build
+  docker-compose -f docker/docker-compose.yml up -d --build
 
 - Notes on volumes & locking ⚠️:
   - Mount `./data` as a bind volume (as above) so data is persisted on the Synology host.

@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   telemetry:
-    build: .
+    build: ..
     ports:
       - "8000:8000"
     volumes:
-      - ./data:/app/data
+      - ../data:/app/data
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
